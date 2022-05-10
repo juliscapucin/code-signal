@@ -1,22 +1,18 @@
 function solution(inputString) {
-  const splitString = inputString.split(".");
-  const regExp = /[a-zA-Z]/g;
+  const regex = /[A-F0-9\-]/g;
+  const regexHifen = /\-/g;
 
-  for (let i = 0; i < splitString.length; i++) {
-    if (
-      !splitString[i] ||
-      splitString.length !== 4 ||
-      splitString[i] > 255 ||
-      regExp.test(splitString[i])
-    ) {
-      return false;
-    } else if (splitString[i].length > 1) {
-      if (splitString[i][0] == 0) {
-        return false;
-      }
-    }
+  if (
+    inputString.length < 17 ||
+    inputString.match(regexHifen).length !== 5 ||
+    inputString.match(regex).length < 17
+  ) {
+    return false;
+  } else if (inputString.split("-").every(i.length === 2)) {
+    return true;
+  } else {
+    return false;
   }
-  return true;
 }
 
 const ipAddress = "64.233.161.00";
