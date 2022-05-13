@@ -17,3 +17,18 @@ const biggestNumber = numbers.reduce((a, b) => {
 }, []);
 
 console.log(biggestNumber);
+
+///////////////////////
+
+const arr = [2, 5, 6, 8, 9];
+
+console.log(Math.max(...arr));
+
+///////////////////////
+
+const arr2 = ["aranha", "mosca", "borboleta"];
+const arr3 = [[1, 1], [2, 2], [3]];
+
+console.log(Math.max(...arr3));
+
+///////////////////////

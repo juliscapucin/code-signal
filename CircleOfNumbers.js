@@ -1,3 +1,15 @@
+function solution2(n, firstNumber) {
+  let opposite = n / 2;
+  let position = firstNumber;
+
+  for (let i = 1; i <= opposite; i++) {
+    position++;
+    position === n ? (position = 0) : (position = position);
+    position === -1 ? (position = n) : (position = position);
+  }
+  return position;
+}
+
 function solution(n, firstNumber) {
   let numberRight = firstNumber;
 
@@ -20,4 +32,4 @@ function solution(n, firstNumber) {
 const circle = 4;
 const firstNum = 1;
 
-console.log(solution(circle, firstNum));
+console.log(solution2(circle, firstNum));
